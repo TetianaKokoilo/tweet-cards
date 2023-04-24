@@ -22,6 +22,9 @@ export const StyledRectangle = styled.div`
   @media (min-width: 1024px) {
     left: 322px;
   }
+  @media (min-width: 1440px) {
+    left: 578px;
+  }
 `;
 export const StyledBoy = styled.img`
   position: absolute;
@@ -36,6 +39,9 @@ export const StyledBoy = styled.img`
   }
   @media (min-width: 1024px) {
     left: 480px;
+  }
+@media (min-width: 1440px) {
+    left: 730px;
   }
 `;
 export const StyledLogo = styled.div`
