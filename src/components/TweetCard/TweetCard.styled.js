@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
+
   background: #5736a3;
   width: 380px;
   height: 100%;
   margin: 0 auto;
   display: block;
+  margin-top: 10px;
 `;
 export const StyledRectangle = styled.div`
   position: absolute;
@@ -30,8 +32,7 @@ export const StyledBoy = styled.img`
   position: absolute;
   width: 80px;
   height: 80px;
-  left: 150px;
-  right: 150px;
+  left: 125px;
   top: 178px;
   border-radius: 85.9232px;
   @media (min-width: 768px) {
