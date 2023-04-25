@@ -10,24 +10,11 @@ export const StyledContainer = styled.div`
   margin-top: 10px;
 `;
 export const StyledRectangle = styled.div`
-  /* position: absolute; */
-  /* width: 380px; */
   margin-top: 150px;
   height: 8px;
-  /* left: 0px;
-  top: 214px; */
   background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
-  /* @media (min-width: 768px) {
-    left: 194px;
-  }
-  @media (min-width: 1024px) {
-    left: 322px;
-  }
-  @media screen and (min-width: 1025px) and (max-width: 2560px) {
-    left: 578px;
-  } */
 `;
 export const StyledBoy = styled.img`
   position: absolute;
@@ -35,6 +22,8 @@ export const StyledBoy = styled.img`
   height: 80px;
   left: 150px;
   top: 178px;
+  /* margin: 0 auto;
+  display: block; */
   border-radius: 85.9232px;
   @media (min-width: 768px) {
     left: 350px;
@@ -43,7 +32,7 @@ export const StyledBoy = styled.img`
     left: 480px;
   }
 @media (min-width: 1440px) {
-    left: 730px;
+    left: 930px;
   }
 `;
 export const StyledLogo = styled.div`
