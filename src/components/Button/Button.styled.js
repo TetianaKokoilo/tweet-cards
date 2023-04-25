@@ -60,5 +60,22 @@ font-size: 18px;
 line-height: 22px;
 text-transform: uppercase;
 color: #373737;
+`
+export const StyledList = styled.ul`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+`
+export const StyledInfoText = styled.p`
+text-align: center;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+text-transform: uppercase;
+color: #EBD8FF;
 
 `

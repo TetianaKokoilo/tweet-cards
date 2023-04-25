@@ -25,7 +25,7 @@ export const StyledRectangle = styled.div`
     left: 322px;
   }
   @media (min-width: 1440px) {
-    left: 578px;
+    left: 577px;
   }
 `;
 export const StyledBoy = styled.img`

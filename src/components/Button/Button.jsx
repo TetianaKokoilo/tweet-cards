@@ -4,6 +4,8 @@ import {
   StyledButtonLoadMore,
   StyledFollowerContainer,
   StyledFollowers,
+  StyledInfoText,
+  StyledList,
   StyledTweets,
 } from './Button.styled';
 import { nanoid } from 'nanoid';
@@ -47,8 +49,8 @@ export const Button = () => {
   return (
     <>
       <StyledFollowerContainer>
-        <StyledTweets>777 TWEETS</StyledTweets>
-        <StyledFollowers>{followersCount} FOLLOWERS</StyledFollowers>
+        <StyledTweets>777 Tweets</StyledTweets>
+        <StyledFollowers>{followersCount} Followers</StyledFollowers>
         <StyledButton
           onClick={handleClick}
           style={{ backgroundColor: isFollowing ? '#5CD3A8' : '#EBD8FF' }}
@@ -57,21 +59,21 @@ export const Button = () => {
         </StyledButton>
       </StyledFollowerContainer>
       <div>
-        <ul>
+        <StyledList>
           {users.map(user => (
             <li key={nanoid()}>
               <img
                 src={user.avatar}
                 alt="avatar"
-                width={150}
-                height={150}
+                width={200}
+                height={200}
               ></img>
-              <p>{user.user}</p>
-              <p>Tweets: {user.tweets}</p>
-              <p>Followers: {user.follows}</p>
+              <StyledInfoText>{user.user}</StyledInfoText>
+              <StyledInfoText>Tweets: {user.tweets}</StyledInfoText>
+              <StyledInfoText>Followers: {user.follows}</StyledInfoText>
             </li>
           ))}
-        </ul>
+        </StyledList>
         <StyledButtonLoadMore onClick={handleLoadMore}>Load More</StyledButtonLoadMore>
       </div>
     </>
