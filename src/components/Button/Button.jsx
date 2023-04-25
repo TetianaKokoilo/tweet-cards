@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   StyledButton,
+  StyledButtonLoadMore,
   StyledFollowerContainer,
   StyledFollowers,
   StyledTweets,
@@ -71,7 +72,7 @@ export const Button = () => {
             </li>
           ))}
         </ul>
-        <button onClick={handleLoadMore}>Load More</button>
+        <StyledButtonLoadMore onClick={handleLoadMore}>Load More</StyledButtonLoadMore>
       </div>
     </>
   );
