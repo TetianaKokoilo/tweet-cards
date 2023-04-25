@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const StyledFollowerContainer = styled.div`
+  padding-top: 240px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 export const StyledTweets = styled.p`
   font-family: 'Montserrat';
   font-style: normal;
@@ -11,12 +17,7 @@ export const StyledTweets = styled.p`
   margin: 0;
   margin-bottom: 16px;
 `;
-export const StyledFollowerContainer = styled.div`
-  padding-top: 240px;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
+
 export const StyledFollowers = styled.p`
 font-family: 'Montserrat';
 font-style: normal;

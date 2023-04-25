@@ -32,7 +32,7 @@ export const StyledBoy = styled.img`
   position: absolute;
   width: 80px;
   height: 80px;
-  left: 125px;
+  left: 150px;
   top: 178px;
   border-radius: 85.9232px;
   @media (min-width: 768px) {

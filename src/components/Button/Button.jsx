@@ -44,26 +44,35 @@ export const Button = () => {
   }, [isFollowing, followersCount]);
 
   return (
-    <StyledFollowerContainer>
-      <StyledTweets>777 TWEETS</StyledTweets>
-      <StyledFollowers>{followersCount} FOLLOWERS</StyledFollowers>
-      <StyledButton
-        onClick={handleClick}
-        style={{ backgroundColor: isFollowing ? '#5CD3A8' : '#EBD8FF' }}
-      >
-        {isFollowing ? 'FOLLOWING' : 'FOLLOW'}
-      </StyledButton>
-      <ul>
-        {users.map(user => (
-          <li key={nanoid()}>
-            <img src={user.avatar} alt="avatar" width={150} height={150}></img>
-            <p>{user.user}</p>
-            <p>Tweets: {user.tweets}</p>
-            <p>Followers: {user.follows}</p>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleLoadMore}>Load More</button>
-    </StyledFollowerContainer>
+    <>
+      <StyledFollowerContainer>
+        <StyledTweets>777 TWEETS</StyledTweets>
+        <StyledFollowers>{followersCount} FOLLOWERS</StyledFollowers>
+        <StyledButton
+          onClick={handleClick}
+          style={{ backgroundColor: isFollowing ? '#5CD3A8' : '#EBD8FF' }}
+        >
+          {isFollowing ? 'FOLLOWING' : 'FOLLOW'}
+        </StyledButton>
+      </StyledFollowerContainer>
+      <div>
+        <ul>
+          {users.map(user => (
+            <li key={nanoid()}>
+              <img
+                src={user.avatar}
+                alt="avatar"
+                width={150}
+                height={150}
+              ></img>
+              <p>{user.user}</p>
+              <p>Tweets: {user.tweets}</p>
+              <p>Followers: {user.follows}</p>
+            </li>
+          ))}
+        </ul>
+        <button onClick={handleLoadMore}>Load More</button>
+      </div>
+    </>
   );
 };
