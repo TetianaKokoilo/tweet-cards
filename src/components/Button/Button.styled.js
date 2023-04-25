@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledFollowerContainer = styled.div`
-  padding-top: 240px;
+  padding-top: 55px;
   display: flex;
     flex-direction: column;
     align-items: center;
