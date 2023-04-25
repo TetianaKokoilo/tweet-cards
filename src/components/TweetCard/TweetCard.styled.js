@@ -32,7 +32,7 @@ export const StyledBoy = styled.img`
     left: 480px;
   }
 @media (min-width: 1440px) {
-    left: 930px;
+    left: 730px;
   }
 `;
 export const StyledLogo = styled.div`

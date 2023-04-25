@@ -1,5 +1,5 @@
 // import { Button } from "./Button/Button";
-import { TweetCard } from "./TweetCard/TweerCard";
+import { TweetCard } from "./TweetCard/TweetCard";
 
 export const App = () => {
   return (
