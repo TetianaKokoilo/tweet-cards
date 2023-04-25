@@ -5,6 +5,7 @@ import {
   StyledFollowers,
   StyledTweets,
 } from './Button.styled';
+import { nanoid } from 'nanoid';
 
 export const Button = () => {
   const [isFollowing, setIsFollowing] = useState(() => {
@@ -15,11 +16,27 @@ export const Button = () => {
     const followersCount = JSON.parse(localStorage.getItem('followersCount'));
     return followersCount !== null ? followersCount : 100500;
   });
+  const [users, setUsers] = useState([]);
+  const [page, setPage] = useState(0);
 
   const handleClick = () => {
     setIsFollowing(!isFollowing);
     setFollowersCount(isFollowing ? followersCount - 1 : followersCount + 1);
   };
+  const handleLoadMore = () => {
+    setPage(page + 1);
+  };
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch(
+        `https://64478ff750c2533744281a24.mockapi.io/api/v1/users?page=${page}&limit=3`
+      );
+      const data = await response.json();
+      setUsers(prevUsers => [...prevUsers, ...data]);
+    };
+    fetchUsers();
+  }, [page]);
 
   useEffect(() => {
     localStorage.setItem('isFollowing', JSON.stringify(isFollowing));
@@ -36,6 +53,17 @@ export const Button = () => {
       >
         {isFollowing ? 'FOLLOWING' : 'FOLLOW'}
       </StyledButton>
+      <ul>
+        {users.map(user => (
+          <li key={nanoid()}>
+            <img src={user.avatar} alt="avatar" width={150} height={150}></img>
+            <p>{user.user}</p>
+            <p>Tweets: {user.tweets}</p>
+            <p>Followers: {user.follows}</p>
+          </li>
+        ))}
+      </ul>
+      <button onClick={handleLoadMore}>Load More</button>
     </StyledFollowerContainer>
   );
 };
