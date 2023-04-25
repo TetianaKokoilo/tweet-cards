@@ -79,3 +79,6 @@ text-transform: uppercase;
 color: #EBD8FF;
 
 `
+export const StyledCont = styled.div`
+width: 380px;
+`

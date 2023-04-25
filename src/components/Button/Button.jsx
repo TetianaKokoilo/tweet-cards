@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import {
   StyledButton,
   StyledButtonLoadMore,
+  StyledCont,
   StyledFollowerContainer,
   StyledFollowers,
   StyledInfoText,
@@ -58,7 +59,7 @@ export const Button = () => {
           {isFollowing ? 'FOLLOWING' : 'FOLLOW'}
         </StyledButton>
       </StyledFollowerContainer>
-      <div>
+      <StyledCont>
         <StyledList>
           {users.map(user => (
             <li key={nanoid()}>
@@ -75,7 +76,7 @@ export const Button = () => {
           ))}
         </StyledList>
         <StyledButtonLoadMore onClick={handleLoadMore}>Load More</StyledButtonLoadMore>
-      </div>
+      </StyledCont>
     </>
   );
 };

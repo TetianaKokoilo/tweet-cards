@@ -24,8 +24,8 @@ export const StyledRectangle = styled.div`
   @media (min-width: 1024px) {
     left: 322px;
   }
-  @media (min-width: 1440px) {
-    left: 577px;
+  @media screen and (min-width: 1025px) and (max-width: 2560px) {
+    left: 578px;
   }
 `;
 export const StyledBoy = styled.img`
