@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-no-undef */
+
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
