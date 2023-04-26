@@ -30,11 +30,21 @@ export const StyledHeader = styled.header`
   }
 `;
 export const Link = styled(NavLink)`
-  padding: 8px 16px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #ebd8ff;
-  font-weight: 500;
+width: 75px;
+height: 20px;
+cursor: pointer;
+margin: 0 auto;
+display: block;
+border-radius: 4px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #ebd8ff;
+text-decoration: none;
+text-align: center;
+padding: 7px;
 
   &.active {
     color: #373737;
