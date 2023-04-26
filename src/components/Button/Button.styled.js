@@ -98,3 +98,9 @@ line-height: 22px;
 text-transform: uppercase;
 color: #373737;
 `
+export const StyledContLoadMore = styled.div`
+padding-bottom: 30px;
+`
+export const StyledContBack = styled.div`
+margin-bottom: 10px;
+`

@@ -42,3 +42,6 @@ font-size: 18px;
 line-height: 22px;
 color: #373737;
 `
+export const StyledContButton = styled.div`
+margin-bottom: 30px;
+`

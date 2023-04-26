@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
   StyledButton,
+  StyledContButton,
   StyledFollowerContainer,
   StyledFollowers,
   StyledTweets,
@@ -15,12 +16,12 @@ export const Followers = () => {
     const followersCount = JSON.parse(localStorage.getItem('followersCount'));
     return followersCount !== null ? followersCount : 100500;
   });
-    
+
   const handleClick = () => {
     setIsFollowing(!isFollowing);
     setFollowersCount(isFollowing ? followersCount - 1 : followersCount + 1);
-    };
-    
+  };
+
   useEffect(() => {
     localStorage.setItem('isFollowing', JSON.stringify(isFollowing));
     localStorage.setItem('followersCount', JSON.stringify(followersCount));
@@ -31,12 +32,14 @@ export const Followers = () => {
       <StyledFollowerContainer>
         <StyledTweets>777 Tweets</StyledTweets>
         <StyledFollowers>{followersCount} Followers</StyledFollowers>
-        <StyledButton
-          onClick={handleClick}
-          style={{ backgroundColor: isFollowing ? '#5CD3A8' : '#EBD8FF' }}
-        >
-          {isFollowing ? 'FOLLOWING' : 'FOLLOW'}
-        </StyledButton>
+        <StyledContButton>
+          <StyledButton
+            onClick={handleClick}
+            style={{ backgroundColor: isFollowing ? '#5CD3A8' : '#EBD8FF' }}
+          >
+            {isFollowing ? 'FOLLOWING' : 'FOLLOW'}
+          </StyledButton>
+        </StyledContButton>
       </StyledFollowerContainer>
     </>
   );

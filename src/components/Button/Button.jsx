@@ -4,6 +4,8 @@ import {
   StyledButtonBack,
   StyledButtonLoadMore,
   StyledCont,
+  StyledContBack,
+  StyledContLoadMore,
   StyledInfoText,
   StyledList,
 } from './Button.styled';
@@ -47,14 +49,19 @@ export const Button = () => {
             </li>
           ))}
         </StyledList>
+
         {showBackButton && (
-          <StyledButtonBack onClick={handleBack}>
-            Go Back 
-          </StyledButtonBack>
+          <StyledContBack>
+            {' '}
+            <StyledButtonBack onClick={handleBack}>Go Back</StyledButtonBack>
+          </StyledContBack>
         )}
-        <StyledButtonLoadMore onClick={handleLoadMore}>
-          Load More
-        </StyledButtonLoadMore>
+        <StyledContLoadMore>
+          {' '}
+          <StyledButtonLoadMore onClick={handleLoadMore}>
+            Load More
+          </StyledButtonLoadMore>
+        </StyledContLoadMore>
       </StyledCont>
     </>
   );
