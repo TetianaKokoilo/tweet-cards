@@ -1,11 +1,8 @@
-// import { Button } from "./Button/Button";
 import { ReactComponent as Logo } from './Logo.svg';
 import { StyledContainer, StyledHeader, Link } from './App.styled';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Home } from 'pages/Home/Home';
 import { Tweets } from 'pages/Tweets/Tweets';
-
-// import { Link } from "react-router-dom";
 
 export const App = () => {
   return (

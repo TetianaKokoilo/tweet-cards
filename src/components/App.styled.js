@@ -27,31 +27,28 @@ export const StyledHeader = styled.header`
 
   > nav {
     display: flex;
+    margin-right: 5px;
   }
 `;
 export const Link = styled(NavLink)`
-width: 75px;
-height: 20px;
-cursor: pointer;
-margin: 0 auto;
-display: block;
-border-radius: 4px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 22px;
-color: #ebd8ff;
-text-decoration: none;
-text-align: center;
-padding: 7px;
+  width: 75px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  border-radius: 4px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ebd8ff;
+  text-decoration: none;
+  text-align: center;
+  padding: 7px;
 
   &.active {
     color: #373737;
     background-color: #fae94e;
   }
 `;
-
-// export const StyledLogo = styled.div`
-// padding-left: 20px;
-// `
