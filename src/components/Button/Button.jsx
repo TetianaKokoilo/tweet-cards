@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
+  StyledButtonBack,
   StyledButtonLoadMore,
   StyledCont,
   StyledInfoText,
   StyledList,
 } from './Button.styled';
-// import { nanoid } from 'nanoid';
 
 export const Button = () => {
-
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(0);
+  const navigate = useNavigate();
+  const [showBackButton, setShowBackButton] = useState(false);
 
   const handleLoadMore = () => {
     setPage(page + 1);
+    setShowBackButton(true);
   };
 
   useEffect(() => {
@@ -27,6 +30,9 @@ export const Button = () => {
     fetchUsers();
   }, [page]);
 
+  const handleBack = () => {
+    navigate('/');
+  };
 
   return (
     <>
@@ -34,19 +40,21 @@ export const Button = () => {
         <StyledList>
           {users.map(user => (
             <li key={user.id}>
-              <img
-                src={user.avatar}
-                alt="avatar"
-                width={200}
-                height={200}
-              ></img>
+              <img src={user.avatar} alt="avatar" width={200} height={200} />
               <StyledInfoText>{user.user}</StyledInfoText>
               <StyledInfoText>Tweets: {user.tweets}</StyledInfoText>
               <StyledInfoText>Followers: {user.follows}</StyledInfoText>
             </li>
           ))}
         </StyledList>
-        <StyledButtonLoadMore onClick={handleLoadMore}>Load More</StyledButtonLoadMore>
+        {showBackButton && (
+          <StyledButtonBack onClick={handleBack}>
+            Go Back 
+          </StyledButtonBack>
+        )}
+        <StyledButtonLoadMore onClick={handleLoadMore}>
+          Load More
+        </StyledButtonLoadMore>
       </StyledCont>
     </>
   );

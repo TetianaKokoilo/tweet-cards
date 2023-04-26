@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledCardImage = styled.img`
-padding-top: 25px;
+  padding-top: 30px;
   padding-left: 36px;
   position: absolute;
   top: 28px;
