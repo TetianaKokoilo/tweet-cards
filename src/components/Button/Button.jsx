@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -6,14 +7,19 @@ import {
   StyledCont,
   StyledContBack,
   StyledContLoadMore,
+  StyledDropdown,
+  StyledFilter,
   StyledInfoText,
   StyledList,
+  StyledOption,
+  StyledSelect,
 } from './Button.styled';
 import { nanoid } from 'nanoid';
 
 export const Button = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState('show all');
   const navigate = useNavigate();
 
   const handleLoadMore = () => {
@@ -41,12 +47,36 @@ export const Button = () => {
   const handleBack = () => {
     navigate('/');
   };
+  const filterUsers = (users, filter) => {
+    switch (filter) {
+      case 'follow':
+        return users.filter(user => user.follows);
+      case 'followings':
+        return users.filter(user => user.followings);
+      default:
+        return users;
+    }
+  };
+
+  const handleFilterChange = event => {
+    setFilter(event.target.value);
+  };
+
+  const filteredUsers = filterUsers(users, filter);
 
   return (
     <>
       <StyledCont>
+        <StyledDropdown>
+          <StyledFilter htmlfor="filter">Filter:</StyledFilter>
+          <StyledSelect id="filter" value={filter} onChange={handleFilterChange}>
+            <StyledOption value="show all">Show All</StyledOption>
+            <StyledOption value="follow">Follow</StyledOption>
+            <StyledOption value="followings">Followings</StyledOption>
+          </StyledSelect>
+        </StyledDropdown>
         <StyledList>
-          {users.map(user => (
+          {filteredUsers.map(user => (
             <li key={nanoid()}>
               <img src={user.avatar} alt="avatar" width={200} height={200} />
               <StyledInfoText>{user.user}</StyledInfoText>
